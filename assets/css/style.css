@@ -91,42 +91,39 @@ nav a.active { color: #fff; border-bottom: 2px solid #f0c24d; padding-bottom: 5p
     color: var(--accent-gold);
 }
 
-/*==============================
-    BUTTON KEMBALI DESTINASI
-==============================*/
-
-.back-button-container{
-    margin-top: 70px;
-    margin-bottom: 25px;
+/* Tajuk + Butang */
+.title-row{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 15px;
 }
 
-.btn-back{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 12px 22px;
-
-    background: rgba(20,35,25,.65);
-    color: #ffffff;
-
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-
-    border-radius: 8px;
-    border: 1px solid rgba(240,194,67,.35);
-
-    backdrop-filter: blur(10px);
-
+/* Back Button */
+.back-btn{
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(240,194,67,0.15);
+    border: 1px solid rgba(240,194,67,0.4);
+    color: #f0c243;
+    font-size: 22px;
+    cursor: pointer;
     transition: all .3s ease;
 }
 
-.btn-back:hover{
+.back-btn:hover{
     background: #f0c243;
     color: #05160c;
-    transform: translateX(-6px);
-    box-shadow: 0 10px 25px rgba(240,194,67,.25);
+    transform: translateX(-4px);
+}
+
+/* Tajuk */
+.hero-content-text h1{
+    margin: 0;
+    font-size: 3rem;
+    color: #F0C243;
 }
 
 /*==========================================================================
