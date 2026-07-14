@@ -27,6 +27,43 @@ position:relative;
 overflow:hidden;
 }
 
+/* Menyusun tajuk dan butang secara bersebelahan */
+.title-with-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Supaya butang turun bawah dengan kemas jika skrin phone terlalu kecil */
+    gap: 15px;
+}
+
+/* Memandangkan kita dah bungkus h1, buang margin-bottom asal h1 supaya seimbang */
+.title-with-btn h1 {
+    margin: 0 !important; 
+}
+
+/* Gaya reka bentuk butang Kembali */
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--accent-gold, #d6af37);
+    border: 2px solid var(--accent-gold, #d6af37);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Kesan apabila tetikus lalu (Hover) pada butang */
+.btn-back:hover {
+    background: var(--accent-gold, #d6af37);
+    color: #0b150f; /* Warna latar belakang kotak hijau gelap anda */
+    transform: translateX(-5px); /* Efek bergerak sedikit ke kiri */
+    box-shadow: 0 5px 15px rgba(214, 175, 55, 0.3);
+}
+
 /*==========================================================================
     NAVIGASI & HEADER
 ==========================================================================*/
