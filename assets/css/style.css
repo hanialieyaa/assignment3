@@ -91,6 +91,44 @@ nav a.active { color: #fff; border-bottom: 2px solid #f0c24d; padding-bottom: 5p
     color: var(--accent-gold);
 }
 
+/*==============================
+    BUTTON KEMBALI DESTINASI
+==============================*/
+
+.back-button-container{
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
+.btn-back{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+
+    background: rgba(20,35,25,.65);
+    color: #ffffff;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 8px;
+    border: 1px solid rgba(240,194,67,.35);
+
+    backdrop-filter: blur(10px);
+
+    transition: all .3s ease;
+}
+
+.btn-back:hover{
+    background: #f0c243;
+    color: #05160c;
+    transform: translateX(-6px);
+    box-shadow: 0 10px 25px rgba(240,194,67,.25);
+}
+
 /*==========================================================================
     BACKGROUND GAMBAR BLUR
 ==========================================================================*/
