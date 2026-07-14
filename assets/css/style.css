@@ -99,33 +99,6 @@ nav a.active { color: #fff; border-bottom: 2px solid #f0c24d; padding-bottom: 5p
     margin-bottom: 15px;
 }
 
-/* Back Button */
-.back-btn{
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(240,194,67,0.15);
-    border: 1px solid rgba(240,194,67,0.4);
-    color: #f0c243;
-    font-size: 22px;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.back-btn:hover{
-    background: #f0c243;
-    color: #05160c;
-    transform: translateX(-4px);
-}
-
-/* Tajuk */
-.hero-content-text h1{
-    margin: 0;
-    font-size: 3rem;
-    color: #F0C243;
-}
-
 /*==========================================================================
     BACKGROUND GAMBAR BLUR
 ==========================================================================*/
