@@ -42,26 +42,47 @@ overflow:hidden;
     margin: 0 !important; 
 }
 
-/* Gaya reka bentuk butang Kembali */
-.btn-back {
-    display: inline-block;
-    padding: 10px 20px;
-    background: transparent;
+/* GAYA BUTANG KEMBALI DI LUAR KOTAK */
+.btn-back-outside {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--accent-gold, #d6af37);
-    border: 2px solid var(--accent-gold, #d6af37);
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+    padding: 10px 20px;
+    border: 1.5px solid var(--accent-gold, #d6af37);
     border-radius: 30px;
+    background: rgba(5, 22, 12, 0.7); /* Latar belakang gelap lutsinar */
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    margin-bottom: 20px; /* Jarak lalai untuk skrin telefon/tablet */
 }
 
-/* Kesan apabila tetikus lalu (Hover) pada butang */
-.btn-back:hover {
+.btn-back-outside span {
+    transition: transform 0.3s ease;
+}
+
+/* Kesan Hover */
+.btn-back-outside:hover {
     background: var(--accent-gold, #d6af37);
-    color: #0b150f; /* Warna latar belakang kotak hijau gelap anda */
-    transform: translateX(-5px); /* Efek bergerak sedikit ke kiri */
-    box-shadow: 0 5px 15px rgba(214, 175, 55, 0.3);
+    color: #05160c; /* Warna hijau gelap anda */
+    box-shadow: 0 8px 20px rgba(214, 175, 55, 0.3);
+}
+
+.btn-back-outside:hover span {
+    transform: translateX(-4px); /* Anak panah bergerak ke kiri sikit */
+}
+
+/* KHAS UNTUK DESKTOP (Skrin Lebar): Tolak butang keluar kotak di sebelah kiri */
+@media (min-width: 1350px) {
+    .btn-back-outside {
+        position: absolute;
+        left: -110px;        /* Letak butang di luar sempadan kiri kontena */
+        top: 40px;           /* Selaras secara menegak dengan bahagian atas kotak */
+        margin-bottom: 0;    /* Buang margin bawah untuk desktop */
+    }
 }
 
 /*==========================================================================
