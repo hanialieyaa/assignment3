@@ -42,7 +42,7 @@ overflow:hidden;
     margin: 0 !important; 
 }
 
-/* GAYA BUTANG KEMBALI DI LUAR KOTAK */
+/* GAYA UTAMA BUTANG (Secara lalai untuk skrin telefon & tablet) */
 .btn-back-outside {
     display: inline-flex;
     align-items: center;
@@ -54,10 +54,17 @@ overflow:hidden;
     padding: 10px 20px;
     border: 1.5px solid var(--accent-gold, #d6af37);
     border-radius: 30px;
-    background: rgba(5, 22, 12, 0.7); /* Latar belakang gelap lutsinar */
-    backdrop-filter: blur(5px);
+    background: rgba(5, 22, 12, 0.9); /* Latar belakang gelap pekat sedikit supaya tidak tenggelam semasa skrol */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    margin-bottom: 20px; /* Jarak lalai untuk skrin telefon/tablet */
+    
+    /* Untuk telefon, kita biarkan ia terapung secara "fixed" di bucu bawah kiri supaya mudah ditekan */
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    z-index: 9999; /* Sentiasa di lapisan paling atas */
 }
 
 .btn-back-outside span {
@@ -67,24 +74,35 @@ overflow:hidden;
 /* Kesan Hover */
 .btn-back-outside:hover {
     background: var(--accent-gold, #d6af37);
-    color: #05160c; /* Warna hijau gelap anda */
-    box-shadow: 0 8px 20px rgba(214, 175, 55, 0.3);
+    color: #05160c;
+    box-shadow: 0 8px 25px rgba(214, 175, 55, 0.4);
 }
 
 .btn-back-outside:hover span {
-    transform: translateX(-4px); /* Anak panah bergerak ke kiri sikit */
+    transform: translateX(-4px);
 }
 
-/* KHAS UNTUK DESKTOP (Skrin Lebar): Tolak butang keluar kotak di sebelah kiri */
-@media (min-width: 1350px) {
+/* KHAS UNTUK SKRIN LEBAR (Desktop / Laptop) */
+@media (min-width: 1250px) {
     .btn-back-outside {
-        position: absolute;
-        left: -110px;        /* Letak butang di luar sempadan kiri kontena */
-        top: 40px;           /* Selaras secara menegak dengan bahagian atas kotak */
-        margin-bottom: 0;    /* Buang margin bawah untuk desktop */
+        position: fixed;
+        /* Menggunakan calc untuk memastikan butang sentiasa di luar kotak container (max-width: 1200px) */
+        left: calc(50% - 600px - 90px); 
+        top: 150px; /* Jarak dari atas skrin (di bawah header anda) */
+        bottom: auto; /* Padam kedudukan bottom untuk telefon tadi */
+        padding: 12px 22px;
     }
 }
 
+/* Jika skrin sederhana (Tablet/Laptop kecil) - Letakkan di tepi kiri skrin secara menegak */
+@media (min-width: 769px) and (max-width: 1249px) {
+    .btn-back-outside {
+        position: fixed;
+        left: 20px;
+        top: 150px;
+        bottom: auto;
+    }
+}
 /*==========================================================================
     NAVIGASI & HEADER
 ==========================================================================*/
